@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlatWallah</title>
+    <link rel="stylesheet" href="admin_style.css" class="css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>  
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="logo">FlatWallah</a>
+        <a href="login.html" class="user-login">
+            <i class="fa fa-user"></i> Login/SignUp
+        </a>
+    </nav>
+
+    <section id="home">
+        <div class="details">
+            <form action="" method="post" enctype="multipart/form-data">
+            <div class="details-info">
+                <h1>Enter your room details</h1>
+            </div>
+
+            <div class="input-area">
+                <div class="input">
+                    <label for="roomName">Enter building name</label>
+                    <input type="text" name="roomName" id="roomName" placeholder="eg. Punjabi villa">
+                </div>
+                <div class="input">
+                    <label for="bhk">Select BHK</label>
+                    <select name="bdk" id="bhk">
+                        <option selected disabled value="-1">Select BHK</option>
+                        <option value="1">1 BHK</option>
+                        <option value="2">2 BHK</option>
+                        <option value="3">3 BHK</option>
+                        <option value="4">Others</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="phone">Enter your mobile/phone number</label>
+                    <input type="text" name="phone" id="phone" placeholder="eg. 9876312345">
+                </div>
+                <div class="input">
+                    <label for="rentPerDay">Rent per day</label>
+                    <input type="number" name="rentPerDay" id="rentPerDay" placeholder="eg. 300">
+                </div>
+                
+                <div class="input">
+                    <label for="minMonth">Minimum month to stay</label>
+                    <input type="number" name="minMonth" id="minMonth" placeholder="eg. 5 months">
+                </div>
+
+                <div class="input">
+                    <span class="checkbox">
+                        <label for="isBooked">Is it booked?</label>
+                        <input type="checkbox" name="isBooked" id="isBooked">
+                    </span>
+                </div>
+                
+                <div class="input">
+                    <label for="type">Select type of rooms</label>
+                    <select name="type" id="type">
+                        <option value="-1" selected disabled>Selct type</option>
+                        <option value="flat">Flat</option>
+                        <option value="pg">PG</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <!-- current booking -->
+                </div>
+                <div class="input flex-2">
+                    <label for="desc">Description</label>
+                    <textarea name="desc" id="desc" rows="7" placeholder="Write about your room"></textarea>
+                </div>
+                <div class="image-upload input">
+                    <label for="images">Upload room images</label>
+                    <div class="image-flex">
+                        <div class="image-tiles">
+                            <span>
+                                <img src="image-upload.svg" id="imageUpload1" alt="image-icon">
+                                <label for="image1">
+                                    <img src="camera-img.png" alt="upload">
+                                </label>
+                            </span>
+                            <input type="file" name="image1" id="image1" accept="image/*" onchange="previewImage('imageUpload1', this)">
+                        </div>
+                        
+                        <div class="image-tiles">
+                            <span>
+                                <img src="image-upload.svg" id="imageUpload2" alt="image-icon">
+                                <label for="image2">
+                                    <img src="camera-img.png" alt="upload">
+                                </label>
+                            </span>
+                            <input type="file" name="image2" id="image2" accept="image/*" onchange="previewImage('imageUpload2', this)">
+                        </div>
+
+                        <div class="image-tiles">
+                            <span>
+                                <img src="image-upload.svg" id="imageUpload3" alt="image-icon">
+                                <label for="image3">
+                                    <img src="camera-img.png" alt="upload">
+                                </label>
+                            </span>
+                            <input type="file" name="image3" id="image3" accept="image/*" onchange="previewImage('imageUpload3', this)">
+                        </div>
+
+                        <div class="image-tiles">
+                            <span>
+                                <img src="image-upload.svg" id="imageUpload4" alt="image-icon">
+                                <label for="image4">
+                                    <img src="camera-img.png" alt="upload">
+                                </label>
+                            </span>
+                            <input type="file" name="image4" id="image4" accept="image/*" onchange="previewImage('imageUpload4', this)">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="input inputxyz">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        </div> <!-- detials-->
+    </section>
+
+      <script src="admin_app.js"></script>
+</body>
+</html>
